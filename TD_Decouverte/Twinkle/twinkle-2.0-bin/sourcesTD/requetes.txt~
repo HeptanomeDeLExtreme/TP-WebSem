@@ -88,19 +88,3 @@ SELECT ?e WHERE {
 
 // Réponses
 // http://insa-lyon.fr/etudiant#4567890
-
-// Quels étudiants sont inscrits à une UE de la formation http://insa-lyon.fr/formation#4if ?
-PREFIX insa: <http://insa-lyon.fr/insa#>
-PREFIX ue: <http://insa-lyon.fr/ue#>
-PREFIX form: <http://insa-lyon.fr/formation#>
-PREFIX foaf: <http://xmlns.com/foaf/spec/>
-SELECT DISTINCT ?e WHERE {
-    ?e insa:inscrit ?ue.
-    ?ue insa:formation form:4if.
-}
-
-// Réponses
-// http://insa-lyon.fr/etudiant#4567890
-// http://insa-lyon.fr/etudiant#2345678
-// http://insa-lyon.fr/etudiant#3456789
-// http://insa-lyon.fr/etudiant#1234567
