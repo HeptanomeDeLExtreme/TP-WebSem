@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage[francais]{babel}
+
+\begin{document}
+
+\section{Découverte}
+
+\begin{itemize}
+
+\item L'article sur imdb est valide et possède des données. Le site youtube.com et booking.com sont valides mais on peut pas extraire de données. Par contre, si on choisit une vidéo particuliere sur youtube, on aura des données.
+
+\item On peut avoir ses données en XML, en RDF, en JSON et en Turtle.
+
+\item Pour avoir plus d'informations sur ma personne, consultez ma page Web.
+
+\item Et sinon, j'ai balisé le site de Baptiste.
+
+\end{itemize}
+
+\section{SPARQL}
+
+\subsection{Syntaxes}
+zbla
+
+\subsection{Trouver la réponse à la requete}
+\begin{itemize}
+\item Tout les etudiants inscrit à l'ue alia. Réponse : 12344567, 4567890
+\item Tout les etudiants qui ont un co-binome inscrit à l'ue alia. Réponse : 4567890
+\item Tout les etudiants qui ont un co-binome inscrit à l'ue alia ET ce co-binome. Réponse : 12344567, 4567890 
+\item Tout les prédicats et tout les etudiants "2" tel que l'étudiant 1 s'apelle Basile. Réponse : 3456789, Basile, DM, SE
+\end{itemize}
+
+\subsection{Ecrire la requête}
+\begin{itemize}
+\item $PREFIX insa: <http://insa-lyon.fr/insa\#> \\
+PREFIX ue: <http://insa-lyon.fr/ue\#> \\
+PREFIX foaf: <http://xmlns.com/foaf/spec/>  \\
+SELECT ?e WHERE { \\
+?e ?p ?e2. \\
+?e2 foaf:name ?n . \\
+FILTER(?n = "Alice") \\
+}$
+\item $PREFIX insa: <http://insa-lyon.fr/insa\#>
+PREFIX ue: <http://insa-lyon.fr/ue\#>
+PREFIX form: <http://insa-lyon.fr/formation\#>
+PREFIX foaf: <http://xmlns.com/foaf/spec/>
+SELECT DISTINCT ?e WHERE {
+?e insa:inscrit ?u.
+?u insa:formation form:4if.
+}$
+\item lol
+\end{itemize}
+
+\end{document}
