@@ -1,0 +1,61 @@
+// Requête 1 :
+
+PREFIX insa: <http://insa-lyon.fr/insa#>
+PREFIX ue: <http://insa-lyon.fr/ue#>
+SELECT * WHERE 
+{
+    ?e insa:inscrit ue:alia.
+}
+
+// Réponses
+// http://insa-lyon.fr/etudiant#4567890
+// http://insa-lyon.fr/etudiant#1234567
+
+// Requête 2 :
+
+PREFIX insa: <http://insa-lyon.fr/insa#>
+PREFIX ue: <http://insa-lyon.fr/ue#>
+SELECT ?e WHERE 
+{
+    {   
+        { ?e insa:binome ?e2. }
+         UNION
+         { ?e2 insa:binome ?e. }
+     }
+     ?e2 insa:inscrit ue:alia.
+}
+
+// Réponses
+// http://insa-lyon.fr/etudiant#4567890
+// http://insa-lyon.fr/etudiant#1234567
+
+// Requête 3
+
+PREFIX insa: <http://insa-lyon.fr/insa#>
+PREFIX ue: <http://insa-lyon.fr/ue#>
+SELECT ?e WHERE 
+{ 
+     ?e insa:binome ?e2.
+     ?e2 insa:inscrit ue:alia.
+}
+
+// Réponses
+// http://insa-lyon.fr/etudiant#4567890
+
+// Requête 4
+
+PREFIX insa: <http://insa-lyon.fr/insa#>
+PREFIX ue: <http://insa-lyon.fr/ue#>
+PREFIX foaf: <http://xmlns.com/foaf/spec/>
+SELECT ?p ?e2 WHERE 
+{ 
+     ?e ?p ?e2;
+    foaf:name ?n.
+    FILTER(?n = "Basile")
+}
+
+// Réponses
+// http://xmlns.com/foaf/spec/name	Basile
+// http://insa-lyon.fr/insa#binome	http://insa-lyon.fr/etudiant#3456789
+// http://insa-lyon.fr/insa#inscrit	http://insa-lyon.fr/ue#datamining
+// http://insa-lyon.fr/insa#inscrit	http://insa-lyon.fr/ue#se
