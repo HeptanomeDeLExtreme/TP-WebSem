@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.30)  12 NOV 2015 10:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.30)  12 NOV 2015 11:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -171,23 +171,57 @@ Overfull \hbox (488.97743pt too wide) in paragraph at lines 60--71
 12 ?\OML/cmm/m/it/12 u\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 WHERE[]$ 
  []
 
+Missing character: There is no Ã in font cmbx12!
+Missing character: There is no © in font cmbx12!
+
+Overfull \hbox (26.95851pt too wide) in paragraph at lines 78--86
+\OML/cmm/m/it/12 ns\OT1/cmr/m/n/12 # \OML/cmm/m/it/12 > PREFIXgeo \OT1/cmr/m/n/
+12 :\OML/cmm/m/it/12 < http \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 ==www:w\OT1/cmr/
+m/n/12 3\OML/cmm/m/it/12 :org=\OT1/cmr/m/n/12 2003\OML/cmm/m/it/12 =\OT1/cmr/m/
+n/12 01\OML/cmm/m/it/12 =geo=wgs\OT1/cmr/m/n/12 84[]\OML/cmm/m/it/12 os\OT1/cmr
+/m/n/12 # \OML/cmm/m/it/12 >
+ []
+
+
+Overfull \hbox (521.44357pt too wide) in paragraph at lines 78--86
+\OML/cmm/m/it/12 PREFIXdbo \OT1/cmr/m/n/12 :\OML/cmm/m/it/12 < http \OT1/cmr/m/
+n/12 : \OML/cmm/m/it/12 ==dbpedia:org=ontology= > SELECTdistinct\OT1/cmr/m/n/12
+ ?\OML/cmm/m/it/12 countryWHERE[]ORDERBY\OT1/cmr/m/n/12 ?\OML/cmm/m/it/12 count
+ry$ 
+ []
+
+
+Overfull \hbox (17.94609pt too wide) in paragraph at lines 90--99
+[]$\OML/cmm/m/it/12 PREFIXtype \OT1/cmr/m/n/12 :\OML/cmm/m/it/12 < http \OT1/cm
+r/m/n/12 : \OML/cmm/m/it/12 ==dbpedia:org=class=yago= > PREFIXprop \OT1/cmr/m/n
+/12 :\OML/cmm/m/it/12 <
+ []
+
+
+Overfull \hbox (980.8323pt too wide) in paragraph at lines 90--99
+\OML/cmm/m/it/12 http \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 ==dbpedia:org=property
+= > SELECT\OT1/cmr/m/n/12 ?\OML/cmm/m/it/12 country[]ame\OT1/cmr/m/n/12 ?\OML/c
+mm/m/it/12 populationWHERE[]$ 
+ []
+
 [2] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 1326 strings out of 494930
- 18116 string characters out of 6178884
+ 1328 strings out of 494930
+ 18139 string characters out of 6178884
  80691 words of memory out of 5000000
- 4631 multiletter control sequences out of 15000+600000
+ 4633 multiletter control sequences out of 15000+600000
  7587 words of font info for 27 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  28i,4n,30p,244b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
-2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (2 pages, 57615 bytes).
+2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (2 pages, 68495 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
- 18 compressed objects within 1 object stream
+ 31 PDF objects out of 1000 (max. 8388607)
+ 21 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

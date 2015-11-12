@@ -71,4 +71,31 @@ FILTER(?d1 != ?d2)
 
 \end{itemize}
 
+\section{DBPEDIA}
+
+\subsection{Découverte}
+\begin{itemize}
+\item $PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns\#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos\#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT distinct ?country 
+WHERE {
+  ?country rdf:type dbo:Country ; foaf:name "France"@en.
+}
+ORDER BY ?country$
+\end{itemize}
+
+\subsection{Requetes}
+\begin{itemize}
+\item $PREFIX type: <http://dbpedia.org/class/yago/>
+PREFIX prop: <http://dbpedia.org/property/>
+SELECT ?country_name ?population
+WHERE {
+    ?country rdf:type dbo:Country ;
+             rdfs:label ?country_name ;
+             prop:populationEstimate ?population .
+    FILTER (?population > 15000000 \&\& langMatches(lang(?country_name), "en")) .
+}$
+\end{itemize}
+
 \end{document}
