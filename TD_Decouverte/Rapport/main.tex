@@ -48,7 +48,27 @@ SELECT DISTINCT ?e WHERE {
 ?e insa:inscrit ?u.
 ?u insa:formation form:4if.
 }$
-\item lol
+\item $PREFIX insa: <http://insa-lyon.fr/insa\#>
+PREFIX ue: <http://insa-lyon.fr/ue\#>
+PREFIX form: <http://insa-lyon.fr/formation\#>
+PREFIX foaf: <http://xmlns.com/foaf/spec/>
+SELECT DISTINCT ?e WHERE {
+?e insa:binome ?e2.
+?e insa:ue ?ue.
+?e2 insa:ue ?ue.
+}$
+\item $PREFIX insa: <http://insa-lyon.fr/insa\#>
+PREFIX ue: <http://insa-lyon.fr/ue\#>
+PREFIX form: <http://insa-lyon.fr/formation\#>
+PREFIX foaf: <http://xmlns.com/foaf/spec/>
+SELECT DISTINCT ?u ?u2 WHERE {
+?u1 insa:formation ?f1.
+?u2 insa:formation ?f2.
+?f1 insa:departement ?d1.
+?f2 insa:departement ?d2.
+FILTER(?d1 != ?d2)
+}$
+
 \end{itemize}
 
 \end{document}

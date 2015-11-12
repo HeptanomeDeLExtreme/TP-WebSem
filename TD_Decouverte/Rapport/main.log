@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.30)  12 NOV 2015 09:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.30)  12 NOV 2015 10:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -140,30 +140,54 @@ af \OT1/cmr/m/n/12 :\OML/cmm/m/it/12 < http \OT1/cmr/m/n/12 : \OML/cmm/m/it/12
  []
 
 
-Overfull \hbox (13.33293pt too wide) in paragraph at lines 43--51
-\OML/cmm/m/it/12 SELECT\OT1/cmr/m/n/12 ?\OML/cmm/m/it/12 eWHERE[]$ 
+Overfull \hbox (80.55931pt too wide) in paragraph at lines 43--51
+\OML/cmm/m/it/12 SELECTDISTINCT\OT1/cmr/m/n/12 ?\OML/cmm/m/it/12 eWHERE[]$ 
+ []
+
+
+Overfull \hbox (48.04213pt too wide) in paragraph at lines 51--60
+\OML/cmm/m/it/12 lyon:fr=formation\OT1/cmr/m/n/12 # \OML/cmm/m/it/12 > PREFIXfo
+af \OT1/cmr/m/n/12 :\OML/cmm/m/it/12 < http \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 
+==xmlns:com=foaf=spec= >
+ []
+
+
+Overfull \hbox (87.71599pt too wide) in paragraph at lines 51--60
+\OML/cmm/m/it/12 SELECTDISTINCT\OT1/cmr/m/n/12 ?\OML/cmm/m/it/12 eWHERE[]$ 
  []
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./main.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (48.04213pt too wide) in paragraph at lines 60--71
+\OML/cmm/m/it/12 lyon:fr=formation\OT1/cmr/m/n/12 # \OML/cmm/m/it/12 > PREFIXfo
+af \OT1/cmr/m/n/12 :\OML/cmm/m/it/12 < http \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 
+==xmlns:com=foaf=spec= >
+ []
+
+
+Overfull \hbox (488.97743pt too wide) in paragraph at lines 60--71
+\OML/cmm/m/it/12 SELECTDISTINCT\OT1/cmr/m/n/12 ?\OML/cmm/m/it/12 u\OT1/cmr/m/n/
+12 ?\OML/cmm/m/it/12 u\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 WHERE[]$ 
+ []
+
+[2] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 1324 strings out of 494930
- 18093 string characters out of 6178884
- 79691 words of memory out of 5000000
- 4629 multiletter control sequences out of 15000+600000
+ 1326 strings out of 494930
+ 18116 string characters out of 6178884
+ 80691 words of memory out of 5000000
+ 4631 multiletter control sequences out of 15000+600000
  7587 words of font info for 27 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  28i,4n,30p,244b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (1 page, 55805 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
+2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (2 pages, 57615 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
+ 27 PDF objects out of 1000 (max. 8388607)
+ 18 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
