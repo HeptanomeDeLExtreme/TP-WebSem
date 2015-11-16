@@ -20,26 +20,31 @@ def processHTML(htmlContent):
 	return htmlContent[(secondIndex+1):(len(htmlContent)-2)]
 
 def JSONParser(htmlSource):
+	dict = {}
 	nbError = 0
 	parsed_json = json.loads(htmlSource)
 	for i in range(len(parsed_json['results'])):
-		print(parsed_json['results'][i]['url'])
-		#print(parsed_json['results'][i]['content'])
+	#for i in range(3):
+		#print(parsed_json['results'][i]['url'])
 		try:
-			annotateHTML(parsed_json['results'][i]['content'])
+			listeURI = annotateHTML(parsed_json['results'][i]['content'])
+			dict[parsed_json['results'][i]['url']] = listeURI	
+			#print(dict[parsed_json['results'][i]['url']])
 		except:
 			nbError = nbError+1
-			print('\tERROR\n')
-	print("Nombre d'erreurs : "+str(nbError))
+			#print('\tERROR\n')
+	#print("Nombre d'erreurs : "+str(nbError))
+	return dict
 
 def annotateHTML(html):
 	annotation = spotlight.annotate("http://spotlight.dbpedia.org/rest/annotate",html)
+	listeURI = []
 	for i in range(len(annotation)):
-		print('\t'+annotation[i]['URI'])
-	print('')
+		listeURI += [annotation[i]['URI']]
+	return listeURI
 
 requete = raw_input("Entrez votre requete : ")
 print('')
 url = "https://searx.laquadrature.net/?q=["+requete+"]&format=json"
 html = readHTML(url)
-JSONParser(html)
+print JSONParser(html)
