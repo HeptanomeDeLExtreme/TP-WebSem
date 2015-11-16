@@ -1,6 +1,7 @@
 import urllib
 import json
 import spotlight
+from SPARQLWrapper import SPARQLWrapper, JSON
 
 def readHTML(url):
 	sock = urllib.urlopen(url)
