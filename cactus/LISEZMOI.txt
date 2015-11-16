@@ -1,0 +1,11 @@
+Pour faire fonctionner CACTUS :
+
+-Installer Python 2.7
+-Installer Django
+-Ouvrir le fichier cactus/cactus/setting.py
+-Modifier la ligne STATICFILES_DIRS avec votre chemin absolu local
+-Retirer settings.py des fichiers locaux suivis par git
+-Ouvrir un terminal à la racine cactus/
+-Faire la commande "python manage.py runserver"
+-Ouvrir sur un navigateur l'url "localhost:8000/cactus/cactus_search/search"
+-En cas de soucis, demander à Nicolas

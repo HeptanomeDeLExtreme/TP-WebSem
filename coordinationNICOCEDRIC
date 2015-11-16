@@ -1,0 +1,18 @@
+{
+  "nomGroupe": "Les paysans dans le marin Poitevin",
+  "listeURL": [
+    {
+      "url": "www.paysan-du-poitevin.fr",
+      "listeURI": [
+			"uri1","uri2"
+		]
+    }
+	{
+		"url": "www.paysan-du-poitevin.fr",
+		"listeURI": [
+			"uri1","uri2"
+		]
+	}
+  ]
+}
+
