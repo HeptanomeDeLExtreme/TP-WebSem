@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <link rel="stylesheet" href="{% static 'style.css' %}" />
+   <title>{% block title %}CACTUS{% endblock %}</title>
+</head>
+
+<body>
+
+  <header>
+	  <h1>CACTUS</h1>
+	  <p><i>CACTUS Agrège Calmement Tout l'Univers Sémantique</i></p>
+	  <img src="{% static 'logo.svg' %}" alt="Logo CACTUS" width="5%" height="5%"/>
+  </header>
+  
+
+   <section id="search_field">
+       {% block search_field %}{% endblock %}
+   </section>
+   
+   <section id="content">
+       {% block content %}{% endblock %}
+   </section>
+
+<footer>© CACTUS et contributeurs.</footer>
+</body>
+</html>

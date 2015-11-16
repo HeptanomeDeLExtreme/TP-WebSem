@@ -1,0 +1,14 @@
+{% extends "cactus_search/base.html" %}
+
+{% block title %}CACTUS Recherche{% endblock %}
+
+{% block search_field %}
+
+{% endblock %}
+
+{% block content %}
+<h2>Résultats :</h2>
+<p>
+  Test
+</p>
+{% endblock %}
