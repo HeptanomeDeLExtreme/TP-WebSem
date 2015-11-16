@@ -1,0 +1,17 @@
+{% extends "cactus_search/base.html" %}
+
+{% block title %}CACTUS Recherche{% endblock %}
+
+{% block search_field %}
+<form action="{% url "cactus_search.views.search" %}" method="post">{% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Explorer" />
+  </form>
+{% endblock %}
+
+{% block content %}
+<h2>Résultats :</h2>
+<p>Cherchez un mot-clé pour tester</p>
+<p>{% if envoi %}Votre requête a bien été envoyée !{% endif %}
+Mot-clé recherché : {{ keyword }}</p>
+{% endblock %}
