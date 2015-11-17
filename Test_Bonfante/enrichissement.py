@@ -39,7 +39,7 @@ WHERE { ?s ?p ?o.
 	requete += """))
 	FILTER ( regex(?p, urlType:type) || regex(?p, urlSeeAlso:seeAlso) || regex(?p, <http://purl.org/dc/terms/subject>) )
       } 
-LIMIT 10 """
+LIMIT 100 """
 	#~ print requete
 	return requete
 

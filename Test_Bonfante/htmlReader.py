@@ -23,17 +23,17 @@ def JSONParser(htmlSource):
 	dict = {}
 	nbError = 0
 	parsed_json = json.loads(htmlSource)
-	for i in range(len(parsed_json['results'])):
-	#for i in range(3):
-		#print(parsed_json['results'][i]['url'])
+	#~ nbURL = len(parsed_json['results'])
+	#~ for i in range(len(parsed_json['results'])):
+	nbURL = 6
+	for i in range(nbURL):
 		try:
 			listeURI = annotateHTML(parsed_json['results'][i]['content'])
 			dict[parsed_json['results'][i]['url']] = listeURI	
-			#print(dict[parsed_json['results'][i]['url']])
 		except:
 			nbError = nbError+1
-			#print('\tERROR\n')
-	#print("Nombre d'erreurs : "+str(nbError))
+	print("\tNombre d'URL : "+str(nbURL))
+	print("\tNombre d'erreurs : "+str(nbError))
 	return dict
 
 def annotateHTML(html):

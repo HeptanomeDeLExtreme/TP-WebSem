@@ -1,10 +1,13 @@
 from htmlReader import *
 from enrichissement import *
-from jaccard import *
+from jaccard2 import *
 
 def main():
 	requete = raw_input("Entrez votre requete : ")
 	print('')
+	(searchOnTheWeb(requete))
+	
+def searchOnTheWeb(requete):
 	url = "https://searx.laquadrature.net/?q=["+requete+"]&format=json"
 	print("Enregistrement des pages html ...")
 	html = readHTML(url)
@@ -16,9 +19,9 @@ def main():
 	dictionnaireEnrichi = parcoursDict(dictionnairePur)
 	print("Enrichissement effectue.")
 	print("Creation des groupes...") 
-	groupes = genereGroupeTest(dictionnaireEnrichi,0.1)
+	#~ groupes = genereGroupeTest(dictionnaireEnrichi,0.1)
+	groupes = generer_graphe(dictionnaireEnrichi)
 	print("Groupes crees.")	
-	print(groupes)
-
+	return groupes
 	
 main()
