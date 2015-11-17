@@ -16,8 +16,7 @@ génère les liens entre des URLs
 entrée : dictionnaire des URLs, seuil à parrtir duquel les URLs sont liées
 sortie : liste de triplets {url, url, indice}, liste
 '''
-def graphe_jaccard(dict, limite):
-	urls = dict.copy()
+def graphe_jaccard(urls, limite):
 	liste, liste_non_liees = [], []
 	for item1 in urls:
 		uris = urls[item1]
