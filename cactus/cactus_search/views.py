@@ -1,5 +1,7 @@
 #-*- coding: utf-8 -*-
 from django.shortcuts import render
+import results
+
 
 def home(request):
         return render(request, 'cactus_search/home.html')
@@ -7,20 +9,22 @@ def home(request):
 from cactus_search.forms import SearchForm
 
 def search(request):
-        # S'il s'agit d'une requête POST
+        # In case of request  POST
         if request.method == 'POST':  
-                # Nous reprenons les données
+                # We get back the form's data
                 form = SearchForm(request.POST)  
 
-                # Nous vérifions que les données envoyées sont valides
+                # We verify if the form's data is valid
                 if form.is_valid(): 
-                        # Ici nous pouvons traiter les données du formulaire
-                        keyword = form.cleaned_data['keyword']
+                        # Here we can work on the form's data
+                        keywords = form.cleaned_data['keywords']
                         envoi = True
 
-        # Si ce n'est pas du POST, c'est probablement une requête GET
+                        groups = results.getResults(keywords)
+
+        # If not POST, it should be GET
         else:
-                # Nous créons un formulaire vide
+                # We create an empty form
                 form = SearchForm()  
                         
                 

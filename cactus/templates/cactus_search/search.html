@@ -1,6 +1,6 @@
 {% extends "cactus_search/base.html" %}
 
-{% block title %}CACTUS Recherche{% endblock %}
+{% block title %}CACTUS Search{% endblock %}
 
 {% block search_field %}
 <form action="{% url "cactus_search.views.search" %}" method="post">{% csrf_token %}
@@ -10,8 +10,12 @@
 {% endblock %}
 
 {% block content %}
-<h2>Résultats :</h2>
-<p>Cherchez un mot-clé pour tester</p>
-<p>{% if envoi %}Votre requête a bien été envoyée !
-Mot-clé recherché : {{ keyword }}{% endif %}</p>
+<h2>Results :</h2>
+<p>{% if envoi %}Searched keywords : {{ keywords }}{% endif %}</p>
+
+<h2>{{ groups.0 }}</h2>
+
+
+
+
 {% endblock %}
