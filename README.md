@@ -15,4 +15,4 @@ Basé sur les résultats du méta-moteur Searx, CACTUS interroge DBPedia. Le pro
  - Ouvrir un terminal à la racine *cactus/*
  - `python manage.py runserver`
 
-Le résultat est disponible à l'adresse [localhost:8000/cactus/cactus_search/search](http://localhost:8000/cactus/cactus_search/search).
+Le résultat est disponible à l'adresse [localhost:8000/cactus_search/search](http://localhost:8000/cactus_search/search).
