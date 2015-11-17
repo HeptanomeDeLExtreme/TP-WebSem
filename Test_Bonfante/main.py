@@ -6,9 +6,9 @@ def main():
 	requete = raw_input("Entrez votre requete : ")
 	print('')
 	url = "https://searx.laquadrature.net/?q=["+requete+"]&format=json"
-	print("Enregistrement de la page html ...")
+	print("Enregistrement des pages html ...")
 	html = readHTML(url)
-	print("Page HTML enregistree.")
+	print("Pages HTML enregistrees.")
 	print("Requete DBPedia SpotLight...")
 	dictionnairePur = JSONParser(html)
 	print("Requete effectuee.")
@@ -20,4 +20,5 @@ def main():
 	print("Groupes crees.")	
 	print(groupes)
 
+	
 main()
