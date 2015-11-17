@@ -5,17 +5,22 @@
 <head>
    <link rel="stylesheet" href="{% static 'style.css' %}" />
    <title>{% block title %}CACTUS{% endblock %}</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
 </head>
 
 <body>
 
-  <header>
-	  <h1>CACTUS</h1>
-	  <p><i>CACTUS Agrège Calmement Tout l'Univers Sémantique</i></p>
-	  <img src="{% static 'logo.svg' %}" alt="Logo CACTUS" width="5%" height="5%"/>
-  </header>
-  
+  <div class="container">
+    <header>
+  	  <h1>CACTUS</h1>
+  	  <p><em>CACTUS Agrège Calmement Tout l'Univers Sémantique</em></p>
+  	  <img class="img-responsive center-block" width="60px" src="{% static 'logo.svg' %}" alt="Logo CACTUS"/><br>
+    </header>
+  </div>
 
+  <div class="container">
    <section id="search_field">
        {% block search_field %}{% endblock %}
    </section>
@@ -23,7 +28,12 @@
    <section id="content">
        {% block content %}{% endblock %}
    </section>
+  </div>
 
-<footer>© CACTUS and contributors.</footer>
+  <hr>
+  <div class="container">
+    <footer>© CACTUS and contributors.</footer>
+  </div>
+
 </body>
 </html>

@@ -5,8 +5,8 @@
 {% block search_field %}
 <form action="{% url "cactus_search.views.search" %}" method="post">{% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" value="Explore the universe" />
-  </form>
+  <input class="btn btn-default" type="submit" value="Explore the universe" />
+</form>
 {% endblock %}
 
 
@@ -14,22 +14,24 @@
 {% if envoi %}
 
 <h2>Results :</h2>
-<p>Searched keywords : {{ keywords }}</p>
+<p>Searched keywords : <span class="label label-default">{{ keywords }}</span></p>
 <hr>
 
 {% for gr in groups %}
-<h2>{{ gr.title }}</h2>
+<div class="well">
+	<h2>{{ gr.title }}</h2>
 
-{% for eu in gr.enriched_urls %}
-<h3>{{ eu.url }}</h3>
+	{% for eu in gr.enriched_urls %}
+		<h3>{{ eu.url }}</h3>
 
-<p> -
-{% for uri in eu.uris %}
-{{uri}} -
-{% endfor %}
-</p>
+		<p> -
+		{% for uri in eu.uris %}
+			{{uri}} -
+		{% endfor %}
+		</p>
 
-{% endfor %}
+	{% endfor %}
+</div>
 
 {% endfor %}
 
