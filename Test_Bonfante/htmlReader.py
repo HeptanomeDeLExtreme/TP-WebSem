@@ -43,8 +43,8 @@ def annotateHTML(html):
 		listeURI += [annotation[i]['URI']]
 	return listeURI
 
-requete = raw_input("Entrez votre requete : ")
-print('')
-url = "https://searx.laquadrature.net/?q=["+requete+"]&format=json"
-html = readHTML(url)
-print JSONParser(html)
+#~ requete = raw_input("Entrez votre requete : ")
+#~ print('')
+#~ url = "https://searx.laquadrature.net/?q=["+requete+"]&format=json"
+#~ html = readHTML(url)
+#~ print JSONParser(html)

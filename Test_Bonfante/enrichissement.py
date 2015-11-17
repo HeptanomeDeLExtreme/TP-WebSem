@@ -1,7 +1,7 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
 
-dictionnaire = {}
-dictionnaire["http://mcgruff.org/"] = ["http://dbpedia.org/resource/Michelle_Obama"]
+#~ dictionnaire = {}
+#~ dictionnaire["http://mcgruff.org/"] = ["http://dbpedia.org/resource/Michelle_Obama"]
 
 def parcoursDict(dic):
 	dicFinal = {}
@@ -39,9 +39,9 @@ WHERE { ?s ?p ?o.
 	requete += """))
 	FILTER ( regex(?p, urlType:type) || regex(?p, urlSeeAlso:seeAlso) || regex(?p, <http://purl.org/dc/terms/subject>) )
       } 
-LIMIT 100 """
+LIMIT 10 """
 	print requete
 	return requete
 
 #~ print(lanceRequete("http://dbpedia.org/resource/Michelle_Obama"))
-print(parcoursDict(dictionnaire))
+#~ print(parcoursDict(dictionnaire))
