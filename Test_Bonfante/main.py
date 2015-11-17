@@ -16,7 +16,7 @@ def main():
 	dictionnaireEnrichi = parcoursDict(dictionnairePur)
 	print("Enrichissement effectue.")
 	print("Creation des groupes...") 
-	groupes = generer_groupes(dictionnaireEnrichi,0.1)
+	groupes = genereGroupeTest(dictionnaireEnrichi,0.1)
 	print("Groupes crees.")	
 	print(groupes)
 

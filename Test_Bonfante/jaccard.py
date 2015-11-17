@@ -20,6 +20,19 @@ def generer_graphe(urls, limite):
 			liste_non_liees+= [url1]
 	return liste, liste_non_liees
 
+def genereGroupeTest(urls,limite):
+	liste_urls, liste_urls_non_liees = generer_graphe(urls, limite)	
+	toRet = {}
+	listeToRet = []
+	for url in liste_urls:
+		url1 = url['url1']
+		url2 = url['url2']
+		listeToRet.append(url1)
+		listeToRet.append(url2)
+	listeToRet += liste_urls_non_liees
+	toRet["Un"] = listeToRet
+	return toRet
+	
 def generer_groupes(urls, limite):
 	liste_urls, liste_urls_non_liees = generer_graphe(urls, limite)	
 	groupes = []
