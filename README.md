@@ -10,7 +10,7 @@ Basé sur les résultats du méta-moteur Searx, CACTUS interroge DBPedia. Le pro
 
 **Installation :**
  - Django : installer *pip*, puis exécuter `pip install Django==1.8.6`
- - Ouvrir le fichier *cactus/cactus/setting.py*
+ - Ouvrir le fichier *cactus/cactus/settings.py*
  - Modifier la ligne `STATICFILES_DIRS` avec votre chemin absolu local
  - Ouvrir un terminal à la racine *cactus/*
  - `python manage.py runserver`
