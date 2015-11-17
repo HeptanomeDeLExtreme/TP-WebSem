@@ -19,8 +19,8 @@ def searchOnTheWeb(requete):
 	dictionnaireEnrichi = parcoursDict(dictionnairePur)
 	print("Enrichissement effectue.")
 	print("Creation des groupes...") 
-	#~ groupes = genereGroupeTest(dictionnaireEnrichi,0.1)
-	groupes = generer_graphe(dictionnaireEnrichi)
+	groupes = genereGroupeTest(dictionnaireEnrichi,0.0)
+	#~ groupes = generer_graphe(dictionnaireEnrichi)
 	print("Groupes crees.")	
 	return groupes
 	
