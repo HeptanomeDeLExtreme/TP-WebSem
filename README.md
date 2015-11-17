@@ -1,3 +1,19 @@
-# TP-WebSem
-<h1> Reblochon </h1>
-The aim of this project is to develop a semantic meta-search engine.
+#TP-WebSem
+#CACTUS
+« CACTUS Aggège Calmement Tout l'Univers Sémantique »
+
+Basé sur les résultats du méta-moteur Searx, CACTUS interroge DBPedia. Le programme est réalisée en Python, et utilise le framework Django.
+
+### Installation
+
+**Pré-requis :** Python 2.7 (installé par défaut sur la plupart des distros grand public)
+
+**Installation :**
+ - Django : installer *pip*, puis exécuter `pip install Django==1.8.6`
+ - Ouvrir le fichier *cactus/cactus/setting.py*
+ - Modifier la ligne `STATICFILES_DIRS` avec votre chemin absolu local
+ - Retirer *settings.py* des fichiers locaux suivis par git
+ - Ouvrir un terminal à la racine *cactus/*
+ - `python manage.py runserver`
+
+Le résultat est disponible à l'adresse [localhost:8000/cactus/cactus_search/search](http://localhost:8000/cactus/cactus_search/search).
