@@ -3,6 +3,11 @@ Dans le fichier htmlReader.py :
 	modifier la méthode JSONParser pour qu'il envoit uniquement les noeuds
 	contenant du texte, et les envoyer phrases par phrases à DBPedia
 
+Dans le fichier main.py :
+	
+	modifier la méthode searchOnTheWeb pour qu'on puisse effectuer des 
+	requetes de plusieurs mots
+
 Dans le fichier jaccard2.py :
 	
 	modifier la méthode createGroups pour qu'il nomme avec un sens logique
