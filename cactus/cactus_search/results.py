@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 import sys
 
-sys.path.insert(0, '/home/cedric/TP-WebSem/Test_Bonfante')
+sys.path.insert(0, '/home/nico/Documents/INSA/4IF/TP-WebSem/Test_Bonfante')
 import main
 
 # Class representing a URL associated with a list of URI

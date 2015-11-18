@@ -1,8 +1,10 @@
 from htmlReader import *
 from enrichissement import *
 from jaccard2 import *
+import pickle
 
 cache = {}
+fileName = "cache.cache"
 
 def main():
 	requete = raw_input("Entrez votre requete : ")
@@ -12,11 +14,23 @@ def main():
 def isInCache(requete):
 	keys = cache.keys()
 	if(requete in keys):
+		print("Already in cache")
 		return True
 	return False
 
-
+def saveInFile():
+	Fichier = open('data.txt','wb')
+	pickle.dump(cache,Fichier)  
+	Fichier.close()
+	
+def loadFromFile():
+	Fichier = open('data.txt','rb')
+	ret = pickle.load(Fichier)    
+	Fichier.close()
+	return ret
+		
 def searchOnTheWeb(requete):
+	cache = loadFromFile()
 	if(isInCache(requete) == True):
 		groupes = cache[requete]
 	else:
@@ -39,7 +53,8 @@ def searchOnTheWeb(requete):
 		print("Groupes crees.")	
 		print("Ajout au cache...")
 		cache[requete] = groupes
-		print("Ajouté au cache.")
+		saveInFile()
+		print("Ajoute au cache.")
 		
 	return groupes
 	
