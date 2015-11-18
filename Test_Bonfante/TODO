@@ -13,4 +13,6 @@ Dans le fichier jaccard2.py :
 	modifier la méthode createGroups pour qu'il nomme avec un sens logique
 	les groupes. Par exemple en se basant sur les URI.
 
-
+	faire en sorte d'avoir des groupements cohérents. Genre les coefs de
+	jaccard sont entre 0 et 0.1, du coup c'est dur d'avoir des groupements
+	cohérents. Poser la question aux profs pour savoir comment faire
