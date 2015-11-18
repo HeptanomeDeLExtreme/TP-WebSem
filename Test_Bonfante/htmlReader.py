@@ -1,6 +1,7 @@
 import urllib
 import json
 import spotlight
+from bs4 import BeautifulSoup
 
 def readHTML(url):
 	sock = urllib.urlopen(url)
@@ -33,7 +34,12 @@ def JSONParser(htmlSource):
 	#~ nbURL = 6
 	#~ for i in range(nbURL):
 		try:
-			listeURI = annotateHTML(parsed_json['results'][i]['content'])
+			##### DEBUT TEST NICO
+                        # content must be the cleaned html page (cur it's the descr)
+			#listeURI = annotateHTML(parsed_json['results'][i]['content'])
+                        url_to_exploit = parsed_json['results'][i]['url']
+                        listeURI = annotateHTML(getAndCleanHTML(url_to_exploit))
+                        ##### FIN TEST NICO
 			#~ print(parsed_json['results'][i]['url'])
 			#~ print(parsed_json['results'][i]['content'])
 			dict[parsed_json['results'][i]['url']] = listeURI	
@@ -49,6 +55,31 @@ def annotateHTML(html):
 	for i in range(len(annotation)):
 		listeURI += [annotation[i]['URI']]
 	return listeURI
+	
+	
+##### DEBUT TEST NICO
+
+def getAndCleanHTML(url):
+        html = urllib.urlopen(url).read()
+        soup = BeautifulSoup(html)
+
+        # kill all script and style elements
+        for script in soup(["script", "style"]):
+                script.extract()    # rip it out
+                
+                # get text
+                text = soup.get_text()
+                
+                # break into lines and remove leading and trailing space on each
+                lines = (line.strip() for line in text.splitlines())
+                # break multi-headlines into a line each
+                chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
+                # drop blank lines
+                text = '\n'.join(chunk for chunk in chunks if chunk)
+
+                return text
+
+##### FIN TEST NICO
 
 #~ requete = raw_input("Entrez votre requete : ")
 #~ print('')
