@@ -30,7 +30,11 @@ def loadFromFile():
 	return ret
 		
 def searchOnTheWeb(requete):
-	cache = loadFromFile()
+	global cache
+	try:
+		cache = loadFromFile()
+	except:
+		print ('No cache data found.')	
 	if(isInCache(requete) == True):
 		groupes = cache[requete]
 	else:
