@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 import sys
-sys.path.insert(0, '/home/nico/Documents/INSA/4IF/TP-WebSem/Test_Bonfante')
+sys.path.insert(0, '/home/marion/4IF/WebSem/TP-WebSem/Test_Bonfante')
 import main
 
 # Class representing a URL associated with a list of URI
@@ -28,13 +28,13 @@ def getResults(keywords):
         list_urls = []
         # groups[gr] represents the list of urls associated to key 'gr'
         for var in groups[gr]:
-            print("Test 1 : " + var)#ligne de test
+            #print("Test 1 : " + var)#ligne de test
             list_urls.append(var)
             
         list_results.append(Result(gr,list_urls))
         
-    print("Test 2 : " + str(list_results[0].title))#ligne de test
-    print("Test 3 : " + str(list_results[0].enriched_urls))#ligne de test
+    #print("Test 2 : " + str(list_results[0].title))#ligne de test
+    #print("Test 3 : " + str(list_results[0].enriched_urls))#ligne de test
 
 
     #uri1="poke1"
