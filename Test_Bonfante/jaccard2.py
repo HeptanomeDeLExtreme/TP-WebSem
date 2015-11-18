@@ -121,12 +121,12 @@ def createGroups(graph):
 		i = i+1
 	return toRet
 	
-urls = {}
-urls["url1"] = ["uri1","uri2"]
-urls["url2"] = ["uri1","uri3"]
-urls["url3"] = ["uri5","uri3"]
-urls["url4"] = ["uri9"]
-urls["url5"] = ["uri10"]
-g,c = genereFiltredGraphe(urls,0)
-CC(g)
-print createGroups(g)
+#~ urls = {}
+#~ urls["url1"] = ["uri1","uri2"]
+#~ urls["url2"] = ["uri1","uri3"]
+#~ urls["url3"] = ["uri5","uri3"]
+#~ urls["url4"] = ["uri9"]
+#~ urls["url5"] = ["uri10"]
+#~ g,c = genereFiltredGraphe(urls,0)
+#~ CC(g)
+#~ print createGroups(g)
