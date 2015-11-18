@@ -154,4 +154,4 @@ def test():
 	CC(g)
 	print createGroups(g,c, urls)
 
-test()
+#~ test()

@@ -33,9 +33,9 @@ def JSONParser(htmlSource):
 	#~ nbURL = 6
 	#~ for i in range(nbURL):
 		try:
-			#~ listeURI = annotateHTML(parsed_json['results'][i]['content'])
-			print(parsed_json['results'][i]['url'])
-			print(parsed_json['results'][i]['content'])
+			listeURI = annotateHTML(parsed_json['results'][i]['content'])
+			#~ print(parsed_json['results'][i]['url'])
+			#~ print(parsed_json['results'][i]['content'])
 			dict[parsed_json['results'][i]['url']] = listeURI	
 		except:
 			nbError = nbError+1
@@ -50,8 +50,8 @@ def annotateHTML(html):
 		listeURI += [annotation[i]['URI']]
 	return listeURI
 
-requete = raw_input("Entrez votre requete : ")
-print('')
-url = "https://searx.laquadrature.net/?q=["+requete+"]&format=json"
-html = readHTML(url)
-JSONParser(html)
+#~ requete = raw_input("Entrez votre requete : ")
+#~ print('')
+#~ url = "https://searx.laquadrature.net/?q=["+requete+"]&format=json"
+#~ html = readHTML(url)
+#~ JSONParser(html)
