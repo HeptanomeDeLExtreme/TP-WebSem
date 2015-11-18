@@ -1,0 +1,11 @@
+Dans le fichier htmlReader.py :
+
+	modifier la méthode JSONParser pour qu'il envoit uniquement les noeuds
+	contenant du texte, et les envoyer phrases par phrases à DBPedia
+
+Dans le fichier jaccard2.py :
+	
+	modifier la méthode createGroups pour qu'il nomme avec un sens logique
+	les groupes. Par exemple en se basant sur les URI.
+
+
