@@ -15,6 +15,7 @@ def generer_graphe(urls, limite):
 			indice = jaccard(uris, urls[url2])
 			if indice >= limite:
 				liste+= [{'url1':url1, 'url2':url2, 'indice':indice}]
+				print(url1+' '+url2+' '+indice)
 				if(not lien): lien = True
 		if(not lien):
 			liste_non_liees+= [url1]
