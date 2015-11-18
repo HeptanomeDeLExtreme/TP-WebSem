@@ -30,7 +30,8 @@ def genereGroupeTest(urls,limite):
 	toRet["Un"] = listeToRet
 	return toRet
 	
-def genereFiltredGraphe(urls,limite):
+def genereFiltredGraphe(urls2,limite):
+	urls = urls2.copy()
 	#~ Cree un dict de correspondance entre l'indice du noeud
 	#~ et l'url associe
 	correspondance = {}
@@ -100,7 +101,7 @@ def printGraph(graph):
 		print("Noeud : "+str(n.getName())+ ' '+findKeyForValues(c,n.getName()))
 		print("Color : "+str(n.getColor()))
 		
-def createGroups(graph,c):
+def createGroups(graph,c, urls):
 	toRet = {}
 	hasMoreConnexComponent = True
 	temp = True
@@ -112,24 +113,45 @@ def createGroups(graph,c):
 		for n in graph:
 			if(n.getColor() == i):
 				#~ print("Noeud : "+str(n.getName())+ ' '+findKeyForValues(c,n.getName()))
+				#~ On ajoute l'url du noeud n dans la liste tempList
 				tempList.append(findKeyForValues(c,n.getName()))
 				temp = False
 		if(temp == True):
 			hasMoreConnexComponent = False
 		else:
-			toRet["Connex Component number :"+str(i)] = tempList
+			#~ Recuperer l'uri qui apparait le plus souvent
+			#~ L'uri qui apparait le plus souvent sera le nom du groupe
+			moultUri = []
+			dicoUri = {}
+			#~ Parcourir tous les noeuds de la composante connexe pour
+			#~ recuperer toutes les uris
+			for oneUrl in tempList:
+				#~ urls[findKeyForValues(c,n.getName())]
+				#~ print "Url : " + oneUrl
+				#~ print urls[oneUrl]
+				moultUri += (urls[oneUrl])
+			#~ Compter le nombre d'apparition de chaque uri
+			for oneUri in moultUri:
+				if oneUri in dicoUri:
+					dicoUri[oneUri] += 1
+				else:
+					dicoUri[oneUri] = 1
+			#~ print dicoUri
+			cle, _ = max(dicoUri.iteritems(), key=lambda x:x[1])
+			#~ print "Cle = " + cle
+			toRet[cle] = tempList
 		i = i+1
 	return toRet
 
-#~ def test():	
-	#~ urls = {}
-	#~ urls["url1"] = ["uri1","uri2"]
-	#~ urls["url2"] = ["uri1","uri3"]
-	#~ urls["url3"] = ["uri5","uri3"]
-	#~ urls["url4"] = ["uri9"]
-	#~ urls["url5"] = ["uri10"]
-	#~ g,c = genereFiltredGraphe(urls,0)
-	#~ CC(g)
-	#~ print createGroups(g,c)
-#~ 
-#~ test()
+def test():	
+	urls = {}
+	urls["url1"] = ["uri1","uri2"]
+	urls["url2"] = ["uri1","uri3"]
+	urls["url3"] = ["uri5","uri3"]
+	urls["url4"] = ["uri9"]
+	urls["url5"] = ["uri10"]
+	g,c = genereFiltredGraphe(urls,0)
+	CC(g)
+	print createGroups(g,c, urls)
+
+test()
