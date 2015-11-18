@@ -8,12 +8,15 @@ Basé sur les résultats du méta-moteur Searx, CACTUS interroge DBPedia. Le pro
 
 ### Installation
 
-**Pré-requis :** Python 2.7 (installé par défaut sur la plupart des distros grand public)
+**Pré-requis :** 
+ - Python 2.7 (installé par défaut sur la plupart des distros grand public)
+ - Django : `pip install Django==1.8.6`
+ - BeautifulSoup 4 : `pip install beautifulsoup4`
 
-**Installation :**
- - Django : installer *pip*, puis exécuter `pip install Django==1.8.6`
+**Mise en route :**
  - Ouvrir le fichier *cactus/cactus/settings.py*
  - Modifier la ligne `STATICFILES_DIRS` avec votre chemin absolu local
+ - Dans *cactus/cactus_search/results.py* : remplacer le 1<sup>er</sup> chemin d'accès par le vôtre
  - Ouvrir un terminal à la racine *cactus/*
  - `python manage.py runserver`
 
