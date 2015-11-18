@@ -27,4 +27,4 @@ def searchOnTheWeb(requete):
 	print("Groupes crees.")	
 	return groupes
 	
-main()
+

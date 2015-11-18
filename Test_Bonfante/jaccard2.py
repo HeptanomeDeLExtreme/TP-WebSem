@@ -3,7 +3,7 @@ from Noeud import *
 def jaccard(liste1, liste2):
 	set1, set2 = set(liste1), set(liste2)
 	inter = set1.intersection(set2)
-	return float(len(inter))/(len(liste1) + len(liste2)-len(inter)) #fuck python2
+	return float(len(inter))/(len(liste1) + len(liste2)-len(inter))
 
 
 def generer_graphe(urls):

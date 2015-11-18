@@ -23,10 +23,10 @@ def JSONParser(htmlSource):
 	dict = {}
 	nbError = 0
 	parsed_json = json.loads(htmlSource)
-	#~ nbURL = len(parsed_json['results'])
-	#~ for i in range(len(parsed_json['results'])):
-	nbURL = 6
-	for i in range(nbURL):
+	nbURL = len(parsed_json['results'])
+	for i in range(len(parsed_json['results'])):
+	#~ nbURL = 6
+	#~ for i in range(nbURL):
 		try:
 			listeURI = annotateHTML(parsed_json['results'][i]['content'])
 			dict[parsed_json['results'][i]['url']] = listeURI	
