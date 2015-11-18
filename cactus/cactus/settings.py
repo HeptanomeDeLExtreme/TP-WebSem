@@ -91,7 +91,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-            "/home/omadz/workspace/TP-WebSem/cactus/static",
+            "/home/cedric/TP-WebSem/cactus/static",
         )
 
 

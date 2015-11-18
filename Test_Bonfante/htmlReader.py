@@ -24,21 +24,21 @@ def JSONParser(htmlSource):
 	dict = {}
 	nbError = 0
 	parsed_json = json.loads(htmlSource)
-	nbURL = len(parsed_json['results'])
-	for i in range(len(parsed_json['results'])):
+	#~ nbURL = len(parsed_json['results'])
+	#~ for i in range(len(parsed_json['results'])):
 		
 	#~ Tu recuperes la page html
 	#~ tu prend les noeuds qui t'interesse
 	#~ tu l'envoie
 	 
-	#~ nbURL = 6
-	#~ for i in range(nbURL):
+	nbURL = 6
+	for i in range(nbURL):
 		try:
 			##### DEBUT TEST NICO
                         # content must be the cleaned html page (cur it's the descr)
-			#listeURI = annotateHTML(parsed_json['results'][i]['content'])
-                        url_to_exploit = parsed_json['results'][i]['url']
-                        listeURI = annotateHTML(getAndCleanHTML(url_to_exploit))
+			listeURI = annotateHTML(parsed_json['results'][i]['content'])
+                        #~ url_to_exploit = parsed_json['results'][i]['url']
+                        #~ listeURI = annotateHTML(getAndCleanHTML(url_to_exploit))
                         ##### FIN TEST NICO
 			#~ print(parsed_json['results'][i]['url'])
 			#~ print(parsed_json['results'][i]['content'])
