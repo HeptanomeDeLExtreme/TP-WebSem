@@ -19,3 +19,6 @@ class Noeud:
 
 	def addNode(self,i):
 		self.adjacent.append(i)
+		
+	def getName(self):
+		return self.nom

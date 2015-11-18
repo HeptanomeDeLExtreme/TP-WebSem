@@ -36,15 +36,14 @@ def genereFiltredGraphe(urls,limite):
 	correspondance = {}
 	key = urls.keys()
 	i=0
-	correspondance[key[0]] = i
-	for url in urls[key[0]]:
-		correspondance[url] = i
+	for url in key:
+		correspondance[key[i]] = i
 		i = i+1 
 	
 	#~ Instancie la liste de Noeud
 	liste = []
 	for j in range(i):
-		temp = Noeud(i)
+		temp = Noeud(j)
 		liste.append(temp)
 	 
 	for url1 in urls.keys():
@@ -55,14 +54,79 @@ def genereFiltredGraphe(urls,limite):
 			if(indice>limite):
 				#~ Ajoute au noeud correspondant a url1 qu'il est lie a url2
 				index1 = correspondance[url1]
-				index2 = correspondance[url1]
+				index2 = correspondance[url2]
 				liste[index1].addNode(index2)
 				#~ Ajoute au noeud correspondant a url2 qu'il est lie a url1 
 				liste[index2].addNode(index1)				
-	return liste
+	return liste, correspondance
 
+def findKeyForValues(dic,val):
+	for e in dic.keys():
+		if(dic[e]==val):
+			return e
+	return -1
+
+def lastUncoloredNode(graph):
+	for i in range(0,len(graph)):
+		if(graph[i].getColor() == -1):
+			return i
+	return -1
+			
+	
+def CC_Sommet(graph,node,color):
+	#~ Je colorie node en color 
+	graph[node].setColor(color)
+	# Je trouve tout l'indice des successeurs de node
+	succInt = graph[node].getAdjacentNode()
+	#~ Parcours tout les succ y de node 
+	for y in succInt:
+		#~ si y n'est pas colore
+		if(graph[y].getColor() == -1):
+			CC_Sommet(graph,y,color) 
+	
+
+def CC(graph):
+	color = -1
+	#~ tant que tout les sommets ne sont pas colories 
+	while(lastUncoloredNode(graph) != -1):
+		#~ choisir un noeud parmi les non-colories 
+		last = lastUncoloredNode(graph)
+		#~ choisir une nouvelle couleur 
+		color = color + 1
+		CC_Sommet(graph,last,color)
+
+def printGraph(graph):
+	for n in graph:
+		print("Noeud : "+str(n.getName())+ ' '+findKeyForValues(c,n.getName()))
+		print("Color : "+str(n.getColor()))
+		
+def createGroups(graph):
+	toRet = {}
+	hasMoreConnexComponent = True
+	temp = True
+	i = 0
+	while(hasMoreConnexComponent):
+		tempList = []
+		#~ print("Connex Component number : "+str(i))
+		temp = True
+		for n in graph:
+			if(n.getColor() == i):
+				#~ print("Noeud : "+str(n.getName())+ ' '+findKeyForValues(c,n.getName()))
+				tempList.append(findKeyForValues(c,n.getName()))
+				temp = False
+		if(temp == True):
+			hasMoreConnexComponent = False
+		else:
+			toRet["Connex Component number :"+str(i)] = tempList
+		i = i+1
+	return toRet
+	
 urls = {}
 urls["url1"] = ["uri1","uri2"]
 urls["url2"] = ["uri1","uri3"]
-g = genereFiltredGraphe(urls,0)
-for n in 
+urls["url3"] = ["uri5","uri3"]
+urls["url4"] = ["uri9"]
+urls["url5"] = ["uri10"]
+g,c = genereFiltredGraphe(urls,0)
+CC(g)
+print createGroups(g)
