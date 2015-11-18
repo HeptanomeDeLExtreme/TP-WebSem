@@ -22,7 +22,12 @@
 	<h2>{{ gr.title }}</h2>
 
 	{% for eu in gr.enriched_urls %}
-		<h3>{{ eu.url }}</h3>
+	
+		{%comment%}
+		{# Quand il y aura des URIs, remplacer la ligne dessous par #}
+		<a href='{{ eu.url }}'>{{ eu.url }}</a>
+		{%endcomment%}
+		<a href='{{ eu }}'>{{ eu }}</a>
 
 		<p> -
 		{% for uri in eu.uris %}
