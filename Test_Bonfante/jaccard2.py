@@ -139,7 +139,7 @@ def createGroups(graph,c, urls):
 			#~ print dicoUri
 			cle, _ = max(dicoUri.iteritems(), key=lambda x:x[1])
 			#~ print "Cle = " + cle
-			toRet[cle] = tempList
+			toRet[cle[cle.rfind('/')+1:]] = tempList
 		i = i+1
 	return toRet
 
