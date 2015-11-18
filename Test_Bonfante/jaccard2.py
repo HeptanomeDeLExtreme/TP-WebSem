@@ -100,7 +100,7 @@ def printGraph(graph):
 		print("Noeud : "+str(n.getName())+ ' '+findKeyForValues(c,n.getName()))
 		print("Color : "+str(n.getColor()))
 		
-def createGroups(graph):
+def createGroups(graph,c):
 	toRet = {}
 	hasMoreConnexComponent = True
 	temp = True
@@ -120,13 +120,16 @@ def createGroups(graph):
 			toRet["Connex Component number :"+str(i)] = tempList
 		i = i+1
 	return toRet
-	
-#~ urls = {}
-#~ urls["url1"] = ["uri1","uri2"]
-#~ urls["url2"] = ["uri1","uri3"]
-#~ urls["url3"] = ["uri5","uri3"]
-#~ urls["url4"] = ["uri9"]
-#~ urls["url5"] = ["uri10"]
-#~ g,c = genereFiltredGraphe(urls,0)
-#~ CC(g)
-#~ print createGroups(g)
+
+#~ def test():	
+	#~ urls = {}
+	#~ urls["url1"] = ["uri1","uri2"]
+	#~ urls["url2"] = ["uri1","uri3"]
+	#~ urls["url3"] = ["uri5","uri3"]
+	#~ urls["url4"] = ["uri9"]
+	#~ urls["url5"] = ["uri10"]
+	#~ g,c = genereFiltredGraphe(urls,0)
+	#~ CC(g)
+	#~ print createGroups(g,c)
+#~ 
+#~ test()
