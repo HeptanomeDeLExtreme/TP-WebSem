@@ -30,7 +30,9 @@ def genereGroupeTest(urls,limite):
 	toRet["Un"] = listeToRet
 	return toRet
 	
-def genereFiltredGraphe(urls2,limite):
+def genereFiltredGraphe2(urls2,limite):
+	fichier = open("graphe.dot, "w")
+	fichier.write("graph mon_graphe {")
 	urls = urls2.copy()
 	#~ Cree un dict de correspondance entre l'indice du noeud
 	#~ et l'url associe
@@ -59,6 +61,39 @@ def genereFiltredGraphe(urls2,limite):
 				liste[index1].addNode(index2)
 				#~ Ajoute au noeud correspondant a url2 qu'il est lie a url1 
 				liste[index2].addNode(index1)				
+	return liste, correspondance
+	
+def genereFiltredGraphe(urls2,limite):
+	urls = urls2.copy()
+	#~ Cree un dict de correspondance entre l'indice du noeud
+	#~ et l'url associe
+	correspondance = {}
+	key = urls.keys()
+	i=0
+	for url in key:
+		correspondance[key[i]] = i
+		i = i+1 
+	
+	#~ Instancie la liste de Noeud
+	liste = []
+	for j in range(i):
+		temp = Noeud(j)
+		liste.append(temp)
+	 
+	for url1 in urls.keys():
+		uris = urls[url1]
+		del urls[url1]
+		for url2 in urls:
+			indice = jaccard(uris, urls[url2])
+			if(indice>limite):
+				#~ Ajoute au noeud correspondant a url1 qu'il est lie a url2
+				fichier.write(url2+"--"+urls[url2]+";")
+				index1 = correspondance[url1]
+				index2 = correspondance[url2]
+				liste[index1].addNode(index2)
+				#~ Ajoute au noeud correspondant a url2 qu'il est lie a url1 
+				liste[index2].addNode(index1)	
+	fichier.write("}")			
 	return liste, correspondance
 
 def findKeyForValues(dic,val):
