@@ -1,5 +1,4 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
-import enrichissement
 
 def apropos(motcle):
 	motcle.replace(' ', '_')
