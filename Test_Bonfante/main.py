@@ -51,7 +51,7 @@ def searchOnTheWeb(requete):
 		print("Creation des groupes...") 
 		#~ groupes = genereGroupeTest(dictionnaireEnrichi,0.0)
 		#~ groupes = generer_graphe(dictionnaireEnrichi)
-		graph, corres = genereFiltredGraphe2(dictionnaireEnrichi,0.05)
+		graph, corres = genereFiltredGraphe2(dictionnaireEnrichi,0.09)
 		CC(graph)
 		groupes = createGroups(graph,corres, dictionnaireEnrichi)
 		print("Groupes crees.")	
