@@ -31,7 +31,7 @@ def genereGroupeTest(urls,limite):
 	return toRet
 	
 def genereFiltredGraphe2(urls2,limite):
-	fichier = open("graphe.dot, "w")
+	fichier = open("graphe.dot", "w")
 	fichier.write("graph mon_graphe {")
 	urls = urls2.copy()
 	#~ Cree un dict de correspondance entre l'indice du noeud
