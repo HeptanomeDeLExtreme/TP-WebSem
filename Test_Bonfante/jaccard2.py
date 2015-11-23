@@ -138,7 +138,7 @@ def createGroups(graph,c, urls):
 					dicoUri[oneUri] = 1
 			#~ print dicoUri
 			cle, _ = max(dicoUri.iteritems(), key=lambda x:x[1])
-			del dicoURI(cle)
+			del dicoUri(cle)
 			nomGroupe = cle[cle.rfind('/')+1:]
 			meilleursURIs = []
 			contenuGroupe = {x:[] for x in tempList}
