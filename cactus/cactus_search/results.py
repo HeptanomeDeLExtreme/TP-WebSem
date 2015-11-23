@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 import sys
 
-sys.path.insert(0, '/home/cedric/TP-WebSem/Test_Bonfante')
+sys.path.insert(0, '/home/nicolas/IF/COURS_4IF/WS/projet/gh2/TP-WebSem/Test_Bonfante')
 import main
 
 # Class representing a URL associated with a list of URI
@@ -25,14 +25,21 @@ def getResults(keywords):
     groups = main.searchOnTheWeb(keywords)
     list_results = []
     
+        
     for gr in groups.keys():
-        list_urls = []
+        list_rich_urls = []
         # groups[gr] represents the list of urls associated to key 'gr'
-        for var in groups[gr]:
-            #print("Test 1 : " + var)#ligne de test
-            list_urls.append(var)
+        for rich_url in groups[gr]:
+            list_uris = []
+            # groups[gr][rich_url] represents the list of uris assoc to key 'url'
+            for uri in groups[gr][rich_url]:
+                uri_key=uri[uri.rfind('/')+1:]
+                list_uris.append(uri_key)
+                
+            list_rich_urls.append(EnrichedURL(rich_url,list_uris))
             
-        list_results.append(Result(gr,list_urls))
+        list_results.append(Result(gr,list_rich_urls))
+
         
     #print("Test 2 : " + str(list_results[0].title))#ligne de test
     #print("Test 3 : " + str(list_results[0].enriched_urls))#ligne de test

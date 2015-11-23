@@ -25,9 +25,9 @@
 	
 		{%comment%}
 		{# Quand il y aura des URIs, remplacer la ligne dessous par #}
-		<a href='{{ eu.url }}'>{{ eu.url }}</a>
-		{%endcomment%}
 		<a href='{{ eu }}'>{{ eu }}</a>
+		{%endcomment%}
+		<a href='{{ eu.url }}'>{{ eu.url }}</a>
 
 		<p> -
 		{% for uri in eu.uris %}

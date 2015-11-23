@@ -194,7 +194,7 @@ def createGroups(graph,c, urls):
 			toRet[nomGroupe] = contenuGroupe
 		i = i+1
 	print '*****************groupes************'
-	print toRet
+	#print toRet
 	return toRet
 
 def test():	
