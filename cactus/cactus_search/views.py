@@ -22,6 +22,8 @@ def search(request):
 
                         groups = results.getResults(keywords)
 
+                        movies = results.getMovies(keywords)
+
         # If not POST, it should be GET
         else:
                 # We create an empty form

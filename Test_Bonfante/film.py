@@ -37,4 +37,4 @@ FILTER regex(str(?film_title), \""""+motCle+"""\").
 	print requete
 	return requete
 
-lanceRequeteFilm("cat")
+#lanceRequeteFilm("cat")

@@ -23,10 +23,6 @@
 
 	{% for eu in gr.enriched_urls %}
 	
-		{%comment%}
-		{# Quand il y aura des URIs, remplacer la ligne dessous par #}
-		<a href='{{ eu }}'>{{ eu }}</a>
-		{%endcomment%}
 		<a href='{{ eu.url }}'>{{ eu.url }}</a>
 
 		<p> -
@@ -39,6 +35,16 @@
 </div>
 
 {% endfor %}
+<hr>
+
+<h2>Related movies :</h2>
+<div class="well">
+
+  {% for m in movies %}
+  <h2>{{m.title}}</h2>
+  <p>{{m.content}}</p>
+  {% endfor %}
+
 
 {% endif %}
 {% endblock %}
