@@ -14,7 +14,10 @@
 {% if envoi %}
 
 
-<p>Searched keywords : <span class="label label-default">{{ keywords }}</span></p>
+<p>Searched keywords : {% for word in keywords.split() %}
+	<span class="label label-default">{{ word }}</span>
+	{% endfor %}
+</p>
 
 
 
