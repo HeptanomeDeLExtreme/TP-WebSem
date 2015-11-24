@@ -79,6 +79,7 @@ def getCountry(keywords):
     # Loop on information prefixes
     for p in country_results:
         p_key=p[p.rfind('/')+1:]
+        
         if p_key=="depiction":
             img = country_results[p]
         else:
