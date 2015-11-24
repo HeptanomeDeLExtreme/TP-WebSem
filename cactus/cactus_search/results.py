@@ -76,6 +76,9 @@ def getCountry(keywords):
     country_results = apropos.lancerRequetePays(keywords)
     list_infos = []
 
+    # Default image, to avoid bug it's not present in DBPedia
+    img = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flags_onu_geneva2.jpg/1024px-Flags_onu_geneva2.jpg"
+    
     # Loop on information prefixes
     for p in country_results:
         p_key=p[p.rfind('/')+1:]
@@ -83,8 +86,34 @@ def getCountry(keywords):
         if p_key=="depiction":
             img = country_results[p]
         else:
-            list_infos.append(CountryInfo(p_key,country_results[p]))
+            if notInBlackList(p_key):
+                p_key = replaceInfoKeyword(p_key)
+                list_infos.append(CountryInfo(p_key,country_results[p]))
 
+    print "IMAGE = " + img
     #print "Country "
     #print list_infos
     return list_infos, img
+
+def replaceInfoKeyword(p_key):
+
+    if p_key == "rdf-schema#label":
+        word = "Name"
+    elif p_key == "areaTotal":
+        word = "Total Area"
+    elif p_key == "rdf-schema#comment":
+        word = "Description"
+    elif p_key == "populationEstimate":
+        word = "Population"
+    else:
+        word = p_key.title()
+    
+    return word
+
+# Infos we don't want to show
+def notInBlackList(p_key):
+    notInBL = True
+    if ((p_key == "populationEstimateYear") or (p_key == "populationEstimateRank")  or (p_key == "languagesType")):
+        notInBL = False
+
+    return notInBL

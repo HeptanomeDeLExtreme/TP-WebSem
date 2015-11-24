@@ -26,6 +26,7 @@ def search(request):
                         print "Getting keyword-related movies ..."
                         movies = results.getMovies(keywords)
                         movies_exist = False
+                        # Empty list is falsy
                         if bool(movies)==True:
                                 movies_exist = True
 
