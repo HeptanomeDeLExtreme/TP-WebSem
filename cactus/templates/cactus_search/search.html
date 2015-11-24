@@ -13,11 +13,40 @@
 {% block content %}
 {% if envoi %}
 
-<h2>Results :</h2>
+
 <p>Searched keywords : <span class="label label-default">{{ keywords }}</span></p>
+
+
+
+{% if is_country %}
 <hr>
+<h2>Country Info :</h2>
+<div class="well">
+  {% for ci in countries %}
+  <p> <b>{{ci.prefix}}</b> : {{ci.info}}</p>
+  {% endfor %}
+</div>
+{% endif %}
+
+
+
+{% if movies_exist %}
+<hr>
+<h2>Related movies :</h2>
+<div class="well">
+  {% for m in movies %}
+  <h2>{{m.title}}</h2>
+  <p>{{m.content}}</p>
+  {% endfor %}
+</div>
+{% endif %}
+
+
+
 
 {% for gr in groups %}
+<hr>
+<h2>Results :</h2>
 <div class="well">
 	<h2>{{ gr.title }}</h2>
 
@@ -34,27 +63,8 @@
 	{% endfor %}
 </div>
 {% endfor %}
-<hr>
 
 
-
-<h2>Related movies :</h2>
-<div class="well">
-  {% for m in movies %}
-  <h2>{{m.title}}</h2>
-  <p>{{m.content}}</p>
-  {% endfor %}
-</div>
-<hr>
-
-
-
-<h2>Country Info :</h2>
-<div class="well">
-  {% for ci in countries %}
-  <p> <b>{{ci.prefix}}</b> : {{ci.info}}</p>
-  {% endfor %}
-</div>
 
 
 {% endif %}

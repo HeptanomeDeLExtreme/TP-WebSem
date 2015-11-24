@@ -13,8 +13,8 @@ def lancerRequetePays(motcle):
 		objet = result["o"]["value"]
 		dicFinal[predicat] = objet
                 ##### Test
-                print "predicat : " + predicat
-                print "objet : " + objet
+                #print "predicat : " + predicat
+                #print "objet : " + objet
                 ##### Fin Test
 	return dicFinal
 

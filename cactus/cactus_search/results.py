@@ -78,8 +78,10 @@ def getCountry(keywords):
 
     # Loop on information prefixes
     for p in country_results:
-        list_infos.append(CountryInfo(p,country_results[p]))
+        ci_url = country_results[p]
+        info_key = ci_url[ci_url.rfind('/')+1:]
+        list_infos.append(CountryInfo(p,info_key))
 
-    print "Country "
-    print list_infos
+    #print "Country "
+    #print list_infos
     return list_infos

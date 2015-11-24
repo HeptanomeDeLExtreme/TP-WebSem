@@ -20,11 +20,21 @@ def search(request):
                         keywords = form.cleaned_data['keywords']
                         envoi = True
 
+                        print "Getting classic results ..."
                         groups = results.getResults(keywords)
 
+                        print "Getting keyword-related movies ..."
                         movies = results.getMovies(keywords)
+                        movies_exist = False
+                        if bool(movies)==True:
+                                movies_exist = True
 
+                        print "Getting country info ..."
                         countries = results.getCountry(keywords)
+                        is_country = False
+                        if bool(countries)==True:
+                                is_country = True
+                                
 
         # If not POST, it should be GET
         else:
