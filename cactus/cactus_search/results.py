@@ -78,10 +78,12 @@ def getCountry(keywords):
 
     # Loop on information prefixes
     for p in country_results:
-        ci_url = country_results[p]
-        info_key = ci_url[ci_url.rfind('/')+1:]
-        list_infos.append(CountryInfo(p,info_key))
+        p_key=p[p.rfind('/')+1:]
+        if p_key=="depiction":
+            img = country_results[p]
+        else:
+            list_infos.append(CountryInfo(p_key,country_results[p]))
 
     #print "Country "
     #print list_infos
-    return list_infos
+    return list_infos, img

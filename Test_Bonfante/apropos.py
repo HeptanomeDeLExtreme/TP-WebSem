@@ -18,13 +18,13 @@ def lancerRequetePays(motcle):
                 ##### Fin Test
 	return dicFinal
 
-def genererrequete(motcle):
+def genererrequete(motcle):        
 	requete = """
 	SELECT ?p ?o
 	WHERE { ?s ?p ?o. 
         ?s rdf:type <http://schema.org/Country>.
 	FILTER(?s in (<http://dbpedia.org/resource/"""
-	requete += motcle
+	requete += motcle.replace(' ', '_')
 	requete += """>))
         FILTER ((regex(?p, rdfs:label) && langMatches(lang(?o), "en"))  || 
 	(regex(?p, rdfs:comment) && langMatches(lang(?o), "en")) || 

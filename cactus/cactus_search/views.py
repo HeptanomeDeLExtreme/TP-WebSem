@@ -30,7 +30,7 @@ def search(request):
                                 movies_exist = True
 
                         print "Getting country info ..."
-                        countries = results.getCountry(keywords)
+                        countries, img = results.getCountry(keywords)
                         is_country = False
                         if bool(countries)==True:
                                 is_country = True
