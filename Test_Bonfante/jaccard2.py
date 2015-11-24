@@ -193,7 +193,7 @@ def createGroups(graph,c, urls):
 			#~ print "Cle = " + cle
 			toRet[nomGroupe] = contenuGroupe
 		i = i+1
-	print '*****************groupes************'
+	#print '*****************groupes************'
 	#print toRet
 	return toRet
 

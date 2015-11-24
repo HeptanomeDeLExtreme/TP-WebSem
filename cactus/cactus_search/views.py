@@ -24,6 +24,8 @@ def search(request):
 
                         movies = results.getMovies(keywords)
 
+                        countries = results.getCountry(keywords)
+
         # If not POST, it should be GET
         else:
                 # We create an empty form

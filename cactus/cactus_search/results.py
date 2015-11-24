@@ -4,7 +4,7 @@ import sys
 sys.path.insert(0, '/home/nicolas/IF/COURS_4IF/WS/projet/gh2/TP-WebSem/Test_Bonfante')
 import main
 import film
-#import apropos
+import apropos
 
 
 # Class representing a URL associated with a list of URI
@@ -26,6 +26,12 @@ class Movie:
     def __init__(self,title,content):
         self.title = title
         self.content = content
+
+# Class for countries results
+class CountryInfo:
+    def __init__(self,prefix,info):
+        self.prefix = prefix
+        self.info = info
 
 
 # Classic results
@@ -61,5 +67,19 @@ def getMovies(keywords):
     for m in movies_results.keys():
         list_movies.append(Movie(m,movies_results[m]))
     
-    print list_movies
     return list_movies
+
+
+# Countries results
+def getCountry(keywords):
+
+    country_results = apropos.lancerRequetePays(keywords)
+    list_infos = []
+
+    # Loop on information prefixes
+    for p in country_results:
+        list_infos.append(CountryInfo(p,country_results[p]))
+
+    print "Country "
+    print list_infos
+    return list_infos

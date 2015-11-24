@@ -33,17 +33,28 @@
 
 	{% endfor %}
 </div>
-
 {% endfor %}
 <hr>
 
+
+
 <h2>Related movies :</h2>
 <div class="well">
-
   {% for m in movies %}
   <h2>{{m.title}}</h2>
   <p>{{m.content}}</p>
   {% endfor %}
+</div>
+<hr>
+
+
+
+<h2>Country Info :</h2>
+<div class="well">
+  {% for ci in countries %}
+  <p> <b>{{ci.prefix}}</b> : {{ci.info}}</p>
+  {% endfor %}
+</div>
 
 
 {% endif %}

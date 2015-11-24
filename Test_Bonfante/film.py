@@ -13,9 +13,9 @@ def lanceRequeteFilm(motCle):
 		lastIndex = temp.rfind("/")+1
 		cle = temp[lastIndex:]
 		dic[cle] = temp2
-	for cle in dic.keys():
-		print cle
-		print dic[cle]
+	#for cle in dic.keys():
+		#print cle
+		#print dic[cle]
 	return dic
 
 # On trie pour recuperer les predicats qui ont la valeur
@@ -34,7 +34,7 @@ FILTER regex(str(?film_title), \""""+motCle+"""\").
  FILTER (langMatches(lang(?film_abstract),"en")) 
 } LIMIT 3
 """
-	print requete
+	#print requete
 	return requete
 
 #lanceRequeteFilm("cat")

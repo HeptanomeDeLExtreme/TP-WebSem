@@ -1,6 +1,6 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
 
-def apropos(motcle):
+def lancerRequetePays(motcle):
 	motcle.replace(' ', '_')
 	requete = genererrequete(motcle)
 	sparql = SPARQLWrapper("http://dbpedia.org/sparql")
@@ -12,6 +12,10 @@ def apropos(motcle):
 		predicat = result["p"]["value"]
 		objet = result["o"]["value"]
 		dicFinal[predicat] = objet
+                ##### Test
+                print "predicat : " + predicat
+                print "objet : " + objet
+                ##### Fin Test
 	return dicFinal
 
 def genererrequete(motcle):
