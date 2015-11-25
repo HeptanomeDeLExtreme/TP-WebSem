@@ -1,10 +1,11 @@
 #-*- coding: utf-8 -*-
 import sys
 
-sys.path.insert(0, '/home/nico/Documents/INSA/4IF/TP-WebSem/Test_Bonfante')
+sys.path.insert(0, '/home/nicolas/IF/COURS_4IF/WS/projet/gh2/TP-WebSem/Test_Bonfante')
 import main
 import film
 import apropos
+import htmlReader
 
 
 # Class representing a URL associated with a list of URI
@@ -44,12 +45,14 @@ def getResults(keywords):
         list_rich_urls = []
         # groups[gr] represents the list of urls associated to key 'gr'
         for rich_url in groups[gr]:
-            list_uris = ["URI"]
+            # POUR LA DEMO ON MEME LE CONTENT DANS LIST_URI
+            list_uris = [htmlReader.getContent(rich_url)]
             # groups[gr][rich_url] represents the list of uris assoc to key 'url'
             #~ for uri in groups[gr][rich_url]:
                 #~ uri_key=uri[uri.rfind('/')+1:]
                 #~ list_uris.append(uri_key)
                 #~ list_uris.append(uri)
+            
                 
             list_rich_urls.append(EnrichedURL(rich_url,list_uris))
             

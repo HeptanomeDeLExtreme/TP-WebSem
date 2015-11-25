@@ -15,6 +15,7 @@ BR = re.compile("<br */? *>[ \r\n]*<br */? *>")
 
 ##### FIN TEST NICO
 
+contentURL = {}
 
 def readHTML(url):
 	sock = urllib.urlopen(url)
@@ -32,6 +33,12 @@ def find_nth(haystack, needle, n):
 def processHTML(htmlContent):
 	secondIndex= find_nth(htmlContent,'[',2)
 	return htmlContent[(secondIndex+1):(len(htmlContent)-2)]
+
+
+def getContent(url):
+	#~ print url
+	return contentURL[url]
+
 
 def JSONParser(htmlSource):
 	dict = {}
@@ -52,6 +59,7 @@ def JSONParser(htmlSource):
                         # content must be the cleaned html page
                         # (currently it's the short description)
 			listeURI = annotateHTML(parsed_json['results'][i]['content'])
+			contentURL[parsed_json['results'][i]['url']] = parsed_json['results'][i]['content']
                         # url_to_exploit = parsed_json['results'][i]['url']
                         # print url_to_exploit
                         # clean_source = getAndCleanHTML(url_to_exploit)

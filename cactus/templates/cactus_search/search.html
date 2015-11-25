@@ -44,22 +44,22 @@
 
 
 
-
-{% for gr in groups %}
 <hr>
 <h2>Results :</h2>
+{% for gr in groups %}
 <div class="well">
 	<h2>{{ gr.title }}</h2>
 
 	{% for eu in gr.enriched_urls %}
 	
-		<a href='{{ eu.url }}'>{{ eu.url }}</a>
+		<p><a href='{{ eu.url }}'>{{ eu.url }}</a></p>
 
-		<p> -
+		<p>
 		{% for uri in eu.uris %}
-			{{uri}} -
+			{{uri}}
 		{% endfor %}
 		</p>
+
 
 	{% endfor %}
 </div>

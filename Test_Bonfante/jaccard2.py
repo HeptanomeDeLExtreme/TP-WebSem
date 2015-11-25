@@ -156,7 +156,7 @@ def createGroups(graph,c, urls):
 		if(temp == True):
 			hasMoreConnexComponent = False
 		else:
-			toRet["Connex Component number :"+str(i)] = tempList
+			toRet["Group "+str(i)] = tempList
 		i = i+1
 	#print '*****************groupes************'
 	print toRet

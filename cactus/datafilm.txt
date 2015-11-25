@@ -1,0 +1,58 @@
+(dp0
+Vpink
+p1
+(dp2
+VPink_Floyd:_Live_at_Pompeii
+p3
+VPink Floyd: Live at Pompeii is a 1972 concert documentary film featuring the English progressive rock group Pink Floyd performing at the ancient Roman amphitheatre in Pompeii, Italy, directed by Adrian Maben.
+p4
+sVRide_the_Pink_Horse
+p5
+VRide the Pink Horse is a 1947 American crime film noir produced by Universal Studios. It was directed by the actor Robert Montgomery from a screenplay by Ben Hecht, which was based on a novel of the same name by Dorothy B. Hughes.  The drama features Robert Montgomery, Wanda Hendrix, Andrea King, Thomas Gomez, among others.
+p6
+sVPinky_Moge_Wali
+p7
+VPinky Moge Wali (2012) is a Punjabi film starring Neeru Bajwa, Gavie Chahal, Geeta Zaildar, K S Makhan, Harpal Singh, B.N. Sharma as the prominent characters.Music for the film will be given by Jitender Shah, Gurmeet Singh & Rohit Composer and Guri Bal. The film started shooting in March 2012. The Movie was released on 28 September 2012.The film's title Pinky Moge Wali comes from the popular character of Pinky introduced in the popular Punjabi movie Jihne Mera Dil Luteya.
+p8
+ssVbolivia
+p9
+(dp10
+VBolivia_(film)
+p11
+VBolivia is a 2001 Argentine and Dutch drama film directed by Israel Adrián Caetano, his first feature-length film. The screenplay is written by Caetano, based upon the Romina Lafranchini story, about his wife. The motion picture features Freddy Flores and Rosa Sánchez, among others.The film was photographed in "gritty" 16mm black-and-white, and was shot by cinematographer Julián Apezteguia. Bolivia was filmed entirely in Buenos Aires.
+p12
+sVReturn_to_Bolivia
+p13
+VReturn to Bolivia is a 2008 Argentine film directed by Mariano Raffo, with the script in collaboration with Marina Boolls.The film was nominated for twenty-two awards and won four of them.
+p14
+ssVgermany
+p15
+(dp16
+VYour_Job_in_Germany
+p17
+VYour Job In Germany is a short film made for the United States War Department in 1945 just before Victory in Europe (VE) Day. It was shown to US soldiers about to go on occupation duty in Germany.  The film was made by the military film unit commanded by Frank Capra and was written by Theodor Geisel, better known by his pen name Dr. Seuss.
+p18
+sVA_Love_in_Germany
+p19
+VEine Liebe in Deutschland (A Love in Germany) is a 1983 feature film directed by Andrzej Wajda.  The film is based on the novel by Rolf Hochhuth about a woman who commits adultery with  a prisoner of war while her husband serves as a soldier during World War II. A Love in Germany, featuring many popular German actors, was produced by German film producer Artur Brauner and  German broadcaster ZDF.
+p20
+sVInside_Nazi_Germany
+p21
+VInside Nazi Germany is a 1938 short documentary film directed by Jack Glenn. It is an episode of the newsreel series The March of Time.In 1993, Inside Nazi Germany was deemed "culturally significant" by the Library of Congress and selected for preservation in the United States National Film Registry.
+p22
+ssVdog
+p23
+(dp24
+VDog_Day_Afternoon
+p25
+VDog Day Afternoon is a 1975 American crime drama film directed by Sidney Lumet, written by Frank Pierson, and produced by Martin Bregman and Martin Elfand. The film stars Al Pacino, John Cazale, Charles Durning, Chris Sarandon, Penelope Allen, James Broderick, Lance Henriksen, and Carol Kane. The title refers to the "sultry dog days of summer".The film was inspired by P.F.
+p26
+sVDog_Star_Man
+p27
+VDog Star Man is a series of short experimental films, all directed by Stan Brakhage: Prelude: Dog Star Man (1961)  Dog Star Man: Part I (1962)  Dog Star Man: Part II (1963)  Dog Star Man: Part III (1964)  Dog Star Man: Part IV (1964)The entire film (Prelude and Parts 1 through 4) was named to the National Film Registry in 1992.The film is part of the by Brakhage: an Anthology Criterion collection DVD.The same footage was also made into a much longer film, The Art of Vision.
+p28
+sVMan_Bites_Dog_(film)
+p29
+VMan Bites Dog (French: C'est arrivé près de chez vous, It Happened in Your Neighborhood) is a 1992 Belgian black comedy crime mockumentary written, produced and directed by Rémy Belvaux, André Bonzel and Benoît Poelvoorde, who are also the film's co-editor, cinematographer and lead actor respectively.The film follows a crew of filmmakers following a serial killer, recording his horrific crimes for a documentary they are producing.
+p30
+ss.
