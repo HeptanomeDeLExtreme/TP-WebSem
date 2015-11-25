@@ -1,16 +1,51 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
+import pickle
+
+cachepays = {}
+fileName = "cachepays.cachepays"
+
+def isInCachePays(requete):
+	keys = cachepays.keys()
+	if(requete in keys):
+		print("Already in cache")
+		return True
+	return False
+
+def saveInFilePays():
+	Fichier = open('datapays.txt','wb')
+	pickle.dump(cachepays,Fichier)  
+	Fichier.close()
+	
+def loadFromFilePays():
+	Fichier = open('datapays.txt','rb')
+	ret = pickle.load(Fichier)
+	Fichier.close()
+	return ret
 
 def lancerRequetePays(motcle):
-	requete = genererrequete(motcle)
-	sparql = SPARQLWrapper("http://dbpedia.org/sparql")
-	sparql.setQuery(requete)
-	sparql.setReturnFormat(JSON)
-	results = sparql.query().convert()
-	dicFinal = {}
-	for result in results["results"]["bindings"]:
-		predicat = result["p"]["value"]
-		objet = result["o"]["value"]
-		dicFinal[predicat] = objet
+	global cachepays
+	try:
+		cachepays = loadFromFilepays()
+	except:
+		print ('No cache data found.')	
+	if(isInCachePays(motcle) == True):
+		dicFinal = cachepays[motcle]
+	else:
+		requete = genererrequete(motcle)
+		sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+		sparql.setQuery(requete)
+		sparql.setReturnFormat(JSON)
+		results = sparql.query().convert()
+		dicFinal = {}
+		for result in results["results"]["bindings"]:
+			predicat = result["p"]["value"]
+			objet = result["o"]["value"]
+			dicFinal[predicat] = objet
+		print("Ajout pays au cache...")
+		cachepays[motcle] = dicFinal
+		saveInFilePays()
+		print("Ajoute pays au cache.")
+	
 	return dicFinal
 
 def genererrequete(motcle):
