@@ -90,7 +90,7 @@ def getCountry(keywords):
                 p_key = replaceInfoKeyword(p_key)
                 list_infos.append(CountryInfo(p_key,country_results[p]))
 
-    print "IMAGE = " + img
+    #print "IMAGE = " + img
     #print "Country "
     #print list_infos
     return list_infos, img
