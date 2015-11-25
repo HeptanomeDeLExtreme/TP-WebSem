@@ -156,7 +156,44 @@ def createGroups(graph,c, urls):
 		if(temp == True):
 			hasMoreConnexComponent = False
 		else:
-			toRet["Connex Component number :"+str(i)] = tempList
+			#~ Recuperer l'uri qui apparait le plus souvent
+			#~ L'uri qui apparait le plus souvent sera le nom du groupe
+			moultUri = []
+			dicoUri = {}
+			#~ Parcourir tous les noeuds de la composante connexe pour
+			#~ recuperer toutes les uris
+			for oneUrl in tempList:
+				#~ urls[findKeyForValues(c,n.getName())]
+				#~ print "Url : " + oneUrl
+				#~ print urls[oneUrl]
+				moultUri += (urls[oneUrl])
+			#~ Compter le nombre d'apparition de chaque uri
+			for oneUri in moultUri:
+				if oneUri in dicoUri:
+					dicoUri[oneUri] += 1
+				else:
+					dicoUri[oneUri] = 1
+			#~ print dicoUri
+			cle, _ = max(dicoUri.iteritems(), key=lambda x:x[1])
+			del dicoUri[cle]
+			nomGroupe = cle[cle.rfind('/')+1:]
+			meilleursURIs = []
+			contenuGroupe = {x:[] for x in tempList}
+			for i in xrange(5):
+				cle, _ = max(dicoUri.iteritems(), key=lambda x:x[1])
+				#print cle
+				meilleursURIs.append(cle)
+				del dicoUri[cle]
+			#print meilleursURIs
+			for oneUrl in tempList:
+				for keyword in meilleursURIs:
+				#print '***********************'
+				#	print keyword, urls[oneUrl]
+					if keyword in urls[oneUrl]:
+						contenuGroupe[oneUrl]+= [keyword]
+
+			#~ print "Cle = " + cle
+			toRet[nomGroupe] = contenuGroupe
 		i = i+1
 	#print '*****************groupes************'
 	print toRet

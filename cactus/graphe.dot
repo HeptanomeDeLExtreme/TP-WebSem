@@ -1,0 +1,24 @@
+graph mon_graphe {http://www.encyclopedia.com/topic/Bolivia.aspx--http://www.lostiempos.com/;
+http://www.boliviaweb.com/--http://www.lostiempos.com/;
+http://www.bolivia.com/--http://www.lostiempos.com/;
+https://en.wikipedia.org/wiki/Bolivia--http://www.lostiempos.com/;
+http://www.nytimes.com/2011/03/20/world/americas/20bolivia.html--http://www.lostiempos.com/;
+https://es.wikipedia.org/wiki/Bolivia--http://www.lostiempos.com/;
+http://www.boliviaweb.com/--http://www.encyclopedia.com/topic/Bolivia.aspx;
+http://www.bolivia.com/--http://www.encyclopedia.com/topic/Bolivia.aspx;
+https://en.wikipedia.org/wiki/Bolivia--http://www.encyclopedia.com/topic/Bolivia.aspx;
+http://www.nytimes.com/2011/03/20/world/americas/20bolivia.html--http://www.encyclopedia.com/topic/Bolivia.aspx;
+https://es.wikipedia.org/wiki/Bolivia--http://www.encyclopedia.com/topic/Bolivia.aspx;
+http://www.bolivia.com/--http://www.boliviaweb.com/;
+https://en.wikipedia.org/wiki/Bolivia--http://www.boliviaweb.com/;
+http://www.nytimes.com/2011/03/20/world/americas/20bolivia.html--http://www.boliviaweb.com/;
+https://es.wikipedia.org/wiki/Bolivia--http://www.boliviaweb.com/;
+http://www.3m.com/--http://www.bolivia.com/;
+https://en.wikipedia.org/wiki/Bolivia--http://www.bolivia.com/;
+http://www.nytimes.com/2011/03/20/world/americas/20bolivia.html--http://www.bolivia.com/;
+https://es.wikipedia.org/wiki/Bolivia--http://www.bolivia.com/;
+http://www.nytimes.com/2011/03/20/world/americas/20bolivia.html--http://www.3m.com/;
+http://www.nytimes.com/2011/03/20/world/americas/20bolivia.html--https://en.wikipedia.org/wiki/Bolivia;
+https://es.wikipedia.org/wiki/Bolivia--https://en.wikipedia.org/wiki/Bolivia;
+https://es.wikipedia.org/wiki/Bolivia--http://www.nytimes.com/2011/03/20/world/americas/20bolivia.html;
+}
