@@ -14,7 +14,6 @@ def generer_graphe(urls):
 		for url2 in urls:
 			indice = jaccard(uris, urls[url2])
 			liste+= [{'url1':url1, 'url2':url2, 'indice':indice}]
-			print(str(url1) +" "+str(url2)+" "+str(indice))
 	return liste
 
 def genereGroupeTest(urls,limite):
@@ -54,7 +53,6 @@ def genereFiltredGraphe2(urls2,limite):
 		del urls[url1]
 		for url2 in urls:
 			indice = jaccard(uris, urls[url2])
-			print("INDICE : "+str(indice))
 			if(indice>limite):
 				#~ Ajoute au noeud correspondant a url1 qu'il est lie a url2
 				fichier.write(str(url2)+"--"+str(url1)+";\n")
@@ -67,36 +65,7 @@ def genereFiltredGraphe2(urls2,limite):
 	fichier.close()					
 	return liste, correspondance
 	
-def genereFiltredGraphe(urls2,limite):
-	urls = urls2.copy()
-	#~ Cree un dict de correspondance entre l'indice du noeud
-	#~ et l'url associe
-	correspondance = {}
-	key = urls.keys()
-	i=0
-	for url in key:
-		correspondance[key[i]] = i
-		i = i+1 
-	
-	#~ Instancie la liste de Noeud
-	liste = []
-	for j in range(i):
-		temp = Noeud(j)
-		liste.append(temp)
-	 
-	for url1 in urls.keys():
-		uris = urls[url1]
-		del urls[url1]
-		for url2 in urls:
-			indice = jaccard(uris, urls[url2])
-			if(indice>limite):
-				#~ Ajoute au noeud correspondant a url1 qu'il est lie a url2
-				index1 = correspondance[url1]
-				index2 = correspondance[url2]
-				liste[index1].addNode(index2)
-				#~ Ajoute au noeud correspondant a url2 qu'il est lie a url1 
-				liste[index2].addNode(index1)	
-	return liste, correspondance
+
 
 def findKeyForValues(dic,val):
 	for e in dic.keys():
@@ -114,7 +83,7 @@ def lastUncoloredNode(graph):
 def CC_Sommet(graph,node,color):
 	#~ Je colorie node en color 
 	graph[node].setColor(color)
-	# Je trouve tout l'indice des successeurs de node
+	#~ Je trouve tout l'indice des successeurs de node
 	succInt = graph[node].getAdjacentNode()
 	#~ Parcours tout les succ y de node 
 	for y in succInt:
@@ -145,11 +114,9 @@ def createGroups(graph,c, urls):
 	i = 0
 	while(hasMoreConnexComponent):
 		tempList = []
-		#~ print("Connex Component number : "+str(i))
 		temp = True
 		for n in graph:
 			if(n.getColor() == i):
-				#~ print("Noeud : "+str(n.getName())+ ' '+findKeyForValues(c,n.getName()))
 				#~ On ajoute l'url du noeud n dans la liste tempList
 				tempList.append(findKeyForValues(c,n.getName()))
 				temp = False
@@ -158,19 +125,6 @@ def createGroups(graph,c, urls):
 		else:
 			toRet["Group "+str(i)] = tempList
 		i = i+1
-	#print '*****************groupes************'
-	print toRet
+
 	return toRet
 
-def test():	
-	urls = {}
-	urls["url1"] = ["uri1","uri2"]
-	urls["url2"] = ["uri1","uri3"]
-	urls["url3"] = ["uri5","uri3"]
-	urls["url4"] = ["uri9"]
-	urls["url5"] = ["uri10"]
-	g,c = genereFiltredGraphe(urls,0)
-	CC(g)
-	print createGroups(g,c, urls)
-
-test()

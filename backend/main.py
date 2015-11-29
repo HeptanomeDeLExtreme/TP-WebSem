@@ -67,7 +67,7 @@ def loadFromFileURL():
 	FichierURL.close()
 	return ret
 		
-def searchOnTheWeb(requete):
+def searchOnTheWeb(requete,jaccard_index):
 	global cache
 	global cacheURL
 	global cacheSpot
@@ -84,15 +84,17 @@ def searchOnTheWeb(requete):
 		cacheURL = loadFromFileUrl()
 	except:
 		print("No cache found for url")
+	
+	# Tuple is the key of the cache
+	tuple = (requete,jaccard_index)
 		
-		
-	if(isInCache(requete) == True):
-		groupes = cache[requete]
+	if(isInCache(tuple) == True):
+		groupes = cache[tuple]
 	else:
 		url = "https://searx.laquadrature.net/?q=["+requete+"]&format=json"
 		
-		if(isInCacheUrl(requete) == True):
-			html = cacheURL[requete]
+		if(isInCacheUrl(tuple) == True):
+			html = cacheURL[tuple]
 		else:
 			print("Enregistrement des pages html ...")
 			html = readHTML(url)
@@ -104,24 +106,22 @@ def searchOnTheWeb(requete):
 		dictionnairePur = JSONParser(html)
 		print("Requete effectuee.")
 		
-		if(isInCacheSpot(requete) == True):
-			dictionnaireEnrichi = spot[requete]
+		if(isInCacheSpot(tuple) == True):
+			dictionnaireEnrichi = spot[tuple]
 		else:
 			print("Enrichissement en cours ...")
 			dictionnaireEnrichi = parcoursDict(dictionnairePur)
 			print("Enrichissement effectue.")
 			cacheSpot[requete] = dictionnaireEnrichi
-			print("dico enrichi Ajoutes au cache")
+			print("Dico enrichi ajoute au cache")
 			
 		print("Creation des groupes...") 
-		#~ groupes = genereGroupeTest(dictionnaireEnrichi,0.0)
-		#~ groupes = generer_graphe(dictionnaireEnrichi)
-		graph, corres = genereFiltredGraphe2(dictionnaireEnrichi,0.06)
+		graph, corres = genereFiltredGraphe2(dictionnaireEnrichi,jaccard_index)
 		CC(graph)
 		groupes = createGroups(graph,corres, dictionnaireEnrichi)
 		print("Groupes crees.")	
 		print("Ajout au cache...")
-		cache[requete] = groupes
+		cache[tuple] = groupes
 		saveInFile()
 		print("Ajoute au cache.")
 		

@@ -18,10 +18,11 @@ def search(request):
                 if form.is_valid(): 
                         # Here we can work on the form's data
                         keywords = form.cleaned_data['keywords']
+                        jaccard_index = form.cleaned_data['jaccard_index']
                         envoi = True
 
                         print "Getting classic results ..."
-                        groups = results.getResults(keywords)
+                        groups = results.getResults(keywords,jaccard_index)
 
                         print "Getting keyword-related movies ..."
                         movies = results.getMovies(keywords)
@@ -29,6 +30,7 @@ def search(request):
                         # Empty list is falsy
                         if bool(movies)==True:
                                 movies_exist = True
+                 
 
                         print "Getting country info ..."
                         countries, img = results.getCountry(keywords)

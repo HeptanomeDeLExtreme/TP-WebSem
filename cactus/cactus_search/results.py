@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 import sys
 
-sys.path.insert(0, '/home/nicolas/IF/COURS_4IF/WS/projet/gh2/TP-WebSem/Test_Bonfante')
+sys.path.insert(0, '/home/nicolas/IF/COURS_4IF/WS/projet/gh2/TP-WebSem/backend')
 import main
 import film
 import apropos
@@ -36,24 +36,16 @@ class CountryInfo:
 
 
 # Classic results
-def getResults(keywords):
+def getResults(keywords,jaccard_index):
     
-    groups = main.searchOnTheWeb(keywords)
+    groups = main.searchOnTheWeb(keywords,jaccard_index)
     list_results = []
     
     for gr in groups.keys():
         list_rich_urls = []
         # groups[gr] represents the list of urls associated to key 'gr'
         for rich_url in groups[gr]:
-            # POUR LA DEMO ON MEME LE CONTENT DANS LIST_URI
             list_uris = [htmlReader.getContent(rich_url)]
-            # groups[gr][rich_url] represents the list of uris assoc to key 'url'
-            #~ for uri in groups[gr][rich_url]:
-                #~ uri_key=uri[uri.rfind('/')+1:]
-                #~ list_uris.append(uri_key)
-                #~ list_uris.append(uri)
-            
-                
             list_rich_urls.append(EnrichedURL(rich_url,list_uris))
             
         list_results.append(Result(gr,list_rich_urls))
@@ -69,7 +61,7 @@ def getMovies(keywords):
     list_movies = []
 
     for m in movies_results.keys():
-        list_movies.append(Movie(m,movies_results[m]))
+        list_movies.append(Movie(m.replace("_"," "),movies_results[m]))
     
     return list_movies
 
@@ -80,7 +72,7 @@ def getCountry(keywords):
     country_results = apropos.lancerRequetePays(keywords)
     list_infos = []
 
-    # Default image, to avoid bug it's not present in DBPedia
+    # Default image, to avoid bug if it's not present in DBPedia
     img = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flags_onu_geneva2.jpg/1024px-Flags_onu_geneva2.jpg"
     
     # Loop on information prefixes
@@ -94,11 +86,9 @@ def getCountry(keywords):
                 p_key = replaceInfoKeyword(p_key)
                 list_infos.append(CountryInfo(p_key,country_results[p]))
 
-    #print "IMAGE = " + img
-    #print "Country "
-    #print list_infos
     return list_infos, img
 
+# Esthetic modifications for country-related results
 def replaceInfoKeyword(p_key):
 
     if p_key == "rdf-schema#label":
